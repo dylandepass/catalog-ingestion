@@ -1,6 +1,6 @@
 # Catalog Ingestion CLI
 
-A Node.js CLI tool that crawls public e-commerce websites, extracts product data, and transforms it into [Product Bus](https://api.adobecommerce.live) JSON format for upload.
+A Node.js CLI tool that crawls public e-commerce websites, extracts product data, and transforms it into [Product Bus](https://api.adobecommerce.live) JSON format for bulk upload.
 
 ## How it works
 
@@ -9,11 +9,49 @@ Discovery → Extraction → Transformation → Output → Upload
  (URLs)      (raw data)   (Product Bus)    (JSON)   (API)
 ```
 
-1. **Discovery** finds product URLs via sitemap parsing, category page crawling, or an explicit URL list
-2. **Extraction** opens each page in a headless browser, pulls data from JSON-LD first, then fills gaps from HTML
+1. **Discovery** finds product URLs via sitemap parsing, category page crawling, an explicit URL list, or the Adobe Commerce Catalog Service GraphQL API
+2. **Extraction** opens each page in a headless browser (or queries GraphQL), pulls data from JSON-LD first, then fills gaps from HTML
 3. **Transformation** converts raw data into the Product Bus schema (validates required fields, normalizes enums, generates paths)
 4. **Output** writes one JSON file per product to disk
 5. **Upload** sends products to the Product Bus API in batches of 50
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                       CLI (bin/cli.js)                          │
+│                        Commander.js                             │
+└────────┬──────────────────┬──────────────────┬─────────────────┘
+         │                  │                  │
+    crawl command     upload command      status command
+         │                  │                  │
+    ┌────┴────┐        ┌────┴────┐        ┌────┴────┐
+    │ Browser │        │ Batch   │        │ State   │
+    │  modes  │        │ upload  │        │ display │
+    └────┬────┘        └─────────┘        └─────────┘
+         │
+    ┌────┴──────────────────────────────────────┐
+    │              Discovery phase               │
+    │  sitemap │ category │ urls │ catalog-svc   │
+    └────┬──────────────────────────────────────┘
+         │
+    ┌────┴──────────────────────────────────────┐
+    │             Extraction phase               │
+    │  JSON-LD (primary) → HTML (fallback)       │
+    │  Platform-specific variant extraction      │
+    └────┬──────────────────────────────────────┘
+         │
+    ┌────┴──────────────────────────────────────┐
+    │           Transformation phase             │
+    │  Raw data → Product Bus schema             │
+    │  Path generation, enum normalization       │
+    └────┬──────────────────────────────────────┘
+         │
+    ┌────┴──────────────────────────────────────┐
+    │              Output phase                  │
+    │  One JSON file per product on disk         │
+    └───────────────────────────────────────────┘
+```
 
 ## Requirements
 
@@ -71,10 +109,12 @@ Discover and extract product data from a commerce website.
 node bin/cli.js crawl --url <url> [options]
 ```
 
+#### Core options
+
 | Option | Short | Default | Description |
 |---|---|---|---|
 | `--url <url>` | `-u` | (required) | Starting URL — homepage, sitemap URL, or category page |
-| `--mode <mode>` | `-m` | `sitemap` | Discovery mode: `sitemap`, `category`, or `urls` |
+| `--mode <mode>` | `-m` | `sitemap` | Discovery mode: `sitemap`, `category`, `urls`, or `catalog-service` |
 | `--urls-file <path>` | | | Text file with one URL per line (for `--mode urls`) |
 | `--output <dir>` | `-o` | `./output` | Directory for output JSON files |
 | `--concurrency <n>` | `-c` | `3` | Maximum concurrent browser pages |
@@ -88,6 +128,20 @@ node bin/cli.js crawl --url <url> [options]
 | `--path-prefix <prefix>` | | | Prefix for generated Product Bus paths (e.g., `/us/en`) |
 | `--default-currency <code>` | | `USD` | Fallback currency when none is detected |
 | `--verbose` | `-v` | `false` | Enable debug-level logging |
+
+#### Catalog Service options
+
+These options apply when using `--mode catalog-service`, which pulls data directly from the Adobe Commerce Catalog Service GraphQL API instead of crawling pages in a browser.
+
+| Option | Default | Description |
+|---|---|---|
+| `--cs-endpoint <url>` | (required) | GraphQL endpoint URL |
+| `--cs-environment-id <id>` | (required) | `magento-environment-id` header value |
+| `--cs-store-code <code>` | `main_website_store` | `magento-store-code` header value |
+| `--cs-store-view-code <code>` | `default` | `magento-store-view-code` header value |
+| `--cs-website-code <code>` | `base` | `magento-website-code` header value |
+| `--cs-customer-group <hash>` | | `magento-customer-group` header value |
+| `--cs-api-key <key>` | `not_used` | `x-api-key` header value |
 
 #### Discovery modes
 
@@ -114,6 +168,17 @@ https://store.example.com/products/widget-b
 
 ```bash
 node bin/cli.js crawl --url https://store.example.com --mode urls --urls-file urls.txt
+```
+
+**`catalog-service`** — Queries the Adobe Commerce Catalog Service GraphQL API directly. No browser required. Useful for Adobe Commerce instances with native Catalog Service access.
+
+```bash
+node bin/cli.js crawl \
+  --mode catalog-service \
+  --cs-endpoint https://edge-graph.adobe.io/api/{env-id}/graphql \
+  --cs-environment-id {your-environment-id} \
+  --url https://store.example.com \
+  --output ./output
 ```
 
 ### `upload`
@@ -341,6 +406,38 @@ node bin/cli.js crawl --url https://store.com --path-prefix /us/en
 
 ---
 
+## Helper scripts
+
+The `scripts/` directory contains post-processing utilities that enrich product JSON files after a crawl.
+
+### `add-categories.js`
+
+Maps products to categories by querying the Adobe Commerce Catalog Service. Uses a hardcoded category ID-to-path mapping (e.g., `3 → apparel`, `4 → apparel/shirts`) and writes category paths into `custom.categories` on each product JSON file.
+
+```bash
+node scripts/add-categories.js
+```
+
+Reads from `./output/products/`, queries each category via `productSearch` GraphQL, and writes the matching category paths back to each product file. Meta-categories like `all-products` and `featured` are filtered out.
+
+### `add-related-products.js`
+
+Assigns related products to each product file based on name-based category rules (e.g., products containing "tee" or "t-shirt" are grouped together). Picks 5 related products from the same category, falling back to random picks if the category is too small. Writes paths into `custom.related`.
+
+```bash
+node scripts/add-related-products.js
+```
+
+### `test-facets.js`
+
+Tests facet queries against the Catalog Service GraphQL API.
+
+```bash
+node scripts/test-facets.js
+```
+
+---
+
 ## Examples
 
 ### Crawl a Shopify store
@@ -373,6 +470,19 @@ node bin/cli.js crawl \
   --verbose
 ```
 
+### Crawl via Catalog Service (no browser)
+
+```bash
+node bin/cli.js crawl \
+  --mode catalog-service \
+  --cs-endpoint https://edge-graph.adobe.io/api/{env-id}/graphql \
+  --cs-environment-id {your-environment-id} \
+  --cs-customer-group {your-customer-group-hash} \
+  --url https://www.example-store.com \
+  --output ./cs-products \
+  --verbose
+```
+
 ### Full pipeline: crawl then upload
 
 ```bash
@@ -383,14 +493,18 @@ node bin/cli.js crawl \
   --output ./products \
   --path-prefix /us/en
 
-# Step 2: Validate
+# Step 2: Enrich (optional)
+node scripts/add-categories.js
+node scripts/add-related-products.js
+
+# Step 3: Validate
 node bin/cli.js upload \
   --input ./products \
   --org my-org \
   --site my-site \
   --dry-run
 
-# Step 3: Upload
+# Step 4: Upload
 node bin/cli.js upload \
   --input ./products \
   --org my-org \
@@ -413,7 +527,62 @@ node bin/cli.js crawl --url https://large-store.com --output ./products --resume
 
 ---
 
+## VSCode debug configurations
+
+The project includes 13 pre-configured VSCode launch configurations in `.vscode/launch.json`. Open the **Run and Debug** panel (Ctrl+Shift+D / Cmd+Shift+D) and select a configuration from the dropdown.
+
+### Crawl configurations
+
+| Configuration | Description |
+|---|---|
+| **Crawl — Sitemap** | Crawl via sitemap discovery against Adobe Store. Concurrency 3, 1.5s delay, verbose. |
+| **Crawl — Category** | Crawl via category page (`/all`). Concurrency 2, 2s delay — gentler for pagination. |
+| **Crawl — URL List** | Crawl from a `urls.txt` file. Provide a text file with one product URL per line. |
+| **Crawl — Resume** | Resume a previously interrupted crawl from `crawl-state.json`. |
+| **Crawl — Limited (5 products)** | Quick test run — crawls only 5 products via sitemap. Good for validating setup. |
+| **Crawl — Visible Browser** | Opens a visible Chromium window (`--no-headless`) for 3 products. Use to debug extraction issues — you can see exactly what the crawler sees. |
+| **Crawl — Catalog Service (Full)** | Full Catalog Service mode against Adobe Store's GraphQL endpoint. No browser, pulls all products via API. |
+| **Crawl — Catalog Service (Limited)** | Same as above but capped at 10 products. Quick validation of Catalog Service integration. |
+
+### Upload configurations
+
+| Configuration | Description |
+|---|---|
+| **Upload — Dry Run** | Validates all JSON files in `./output` against the Product Bus schema without uploading. Prompts for org and site name. |
+| **Upload — Live** | Uploads to the Product Bus API. Prompts for org, site, and API key (masked input). |
+
+### Test configurations
+
+| Configuration | Description |
+|---|---|
+| **E2E Tests** | Runs end-to-end tests against the live Adobe Store (180s timeout). Covers discovery, extraction, transformation, and upload dry-run. |
+| **Unit Tests** | Runs unit tests for JSON-LD extraction, schema transformation, Catalog Service client, and normalizer. |
+
+### Other
+
+| Configuration | Description |
+|---|---|
+| **Status** | Displays crawl progress from `crawl-state.json`. |
+
+### Input prompts
+
+The Upload configurations use VSCode input variables that prompt you at launch time:
+
+- **org** — Product Bus organization name (text input)
+- **site** — Product Bus site name (text input)
+- **apiKey** — Product Bus API key (password input, masked)
+
+---
+
 ## Testing
+
+### Unit tests
+
+```bash
+npm test
+```
+
+Covers JSON-LD extraction, schema transformation and validation, Catalog Service client pagination and retry logic, and Catalog Service response normalization.
 
 ### E2E tests (against live Adobe Store)
 
@@ -421,13 +590,7 @@ node bin/cli.js crawl --url https://large-store.com --output ./products --resume
 npm run test:e2e
 ```
 
-Runs 19 tests against `https://www.adobestore.com` covering discovery, platform detection, JSON-LD extraction, HTML extraction, transformation, validation, path generation, full pipeline, and upload dry-run.
-
-### Unit tests
-
-```bash
-npm test
-```
+Runs 19 tests against `https://www.adobestore.com` covering discovery modes, platform detection, JSON-LD extraction, HTML fallback extraction, variant extraction, schema validation, path generation, full pipeline (crawl + transform + validate), and upload dry-run.
 
 ---
 
@@ -436,43 +599,59 @@ npm test
 ```
 catalog-ingestion/
   bin/
-    cli.js                     Entry point
+    cli.js                     Entry point (Commander.js CLI)
   src/
     commands/
-      crawl.js                 Crawl command
+      crawl.js                 Crawl command (browser-based modes)
+      catalog-service.js       Crawl command (Catalog Service mode)
       upload.js                Upload command
       status.js                Status command
     crawler/
-      browser.js               Playwright browser manager
+      browser.js               Playwright browser lifecycle manager
       discovery.js             URL discovery orchestrator
       sitemap.js               XML sitemap parser
-      category.js              Category page crawler
-      robots.js                robots.txt parser
-      state.js                 Persistent crawl state
+      category.js              Category page crawler with pagination
+      robots.js                robots.txt parser and Crawl-delay enforcement
+      state.js                 Persistent crawl state (JSON, supports resume)
+    catalog-service/
+      client.js                GraphQL client with retry and pagination
+      queries.js               GraphQL query definitions
+      normalizer.js            Catalog Service response → intermediate format
     extractor/
-      index.js                 Extraction orchestrator
-      jsonld.js                JSON-LD extraction
-      html.js                  HTML fallback extraction
-      variants.js              Variant extraction
+      index.js                 Extraction orchestrator (JSON-LD + HTML merge)
+      jsonld.js                JSON-LD schema.org/Product extraction
+      html.js                  HTML fallback extraction via CSS selectors
+      variants.js              Variant extraction (embedded JSON or click-through)
       platforms/
-        index.js               Platform detector
-        shopify.js             Shopify selectors
-        magento.js             Magento selectors
+        index.js               Platform auto-detector
+        shopify.js             Shopify selectors and extraction rules
+        magento.js             Magento / Adobe Commerce selectors
         bigcommerce.js         BigCommerce selectors
         woocommerce.js         WooCommerce selectors
-        generic.js             Generic fallback selectors
+        generic.js             Generic fallback (schema.org microdata)
     transformer/
-      index.js                 Raw data to Product Bus schema
+      index.js                 Raw data → Product Bus schema mapping
     uploader/
-      index.js                 Bulk API upload
+      index.js                 Batch API upload with exponential backoff
     utils/
-      logger.js                Colored logging
-      progress.js              Spinners and progress bars
-      path.js                  URL to Product Bus path
-      validation.js            Schema validation
+      logger.js                Colored logging with verbosity levels
+      progress.js              Spinners, progress bars, and tables
+      path.js                  URL → Product Bus path conversion
+      validation.js            Product Bus schema validation
+  scripts/
+    add-categories.js          Post-crawl: map products to categories via GraphQL
+    add-related-products.js    Post-crawl: assign related products by type
+    test-facets.js             Test facet queries against Catalog Service
   test/
     e2e/
-      adobestore.test.js       E2E tests against live store
-    unit/                      Unit tests
-    fixtures/                  Test fixtures
+      adobestore.test.js       E2E tests against live Adobe Store
+      catalog-service.test.js  Catalog Service integration tests
+    unit/
+      jsonld.test.js           JSON-LD extraction tests
+      transformer.test.js      Transformation and validation tests
+      catalog-service-client.test.js
+      catalog-service-normalizer.test.js
+    fixtures/                  Test data
+  .vscode/
+    launch.json                13 debug configurations (see above)
 ```
