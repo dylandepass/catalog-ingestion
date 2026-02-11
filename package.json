@@ -1,0 +1,31 @@
+{
+  "name": "catalog-ingestion",
+  "version": "1.0.0",
+  "description": "CLI tool to crawl commerce sites and ingest products into Product Bus",
+  "type": "module",
+  "bin": {
+    "catalog-ingestion": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "test": "mocha --recursive 'test/unit/**/*.test.js'",
+    "test:e2e": "mocha --recursive 'test/e2e/**/*.test.js' --timeout 120000"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cli-progress": "^3.12.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "ora": "^8.1.0",
+    "p-queue": "^8.0.1",
+    "playwright": "^1.49.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "mocha": "^11.1.0",
+    "sinon": "^19.0.0"
+  }
+}
