@@ -101,6 +101,43 @@
       "skipFiles": ["<node_internals>/**"]
     },
     {
+      "name": "Crawl — Catalog Service (Full)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cli.js",
+      "args": [
+        "crawl",
+        "--mode", "catalog-service",
+        "--cs-endpoint", "https://edge-graph.adobe.io/api/b8226c70-6dad-4c85-a17b-9b0a3fc3abe2/graphql",
+        "--cs-environment-id", "VyumfC53bDYkVB6b8MXsJh",
+        "--cs-customer-group", "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c",
+        "--url", "https://www.adobestore.com",
+        "--output", "./output",
+        "--verbose"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "Crawl — Catalog Service (Limited)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/cli.js",
+      "args": [
+        "crawl",
+        "--mode", "catalog-service",
+        "--cs-endpoint", "https://edge-graph.adobe.io/api/b8226c70-6dad-4c85-a17b-9b0a3fc3abe2/graphql",
+        "--cs-environment-id", "VyumfC53bDYkVB6b8MXsJh",
+        "--cs-customer-group", "b6589fc6ab0dc82cf12099d1c2d40ab994e8410c",
+        "--url", "https://www.adobestore.com",
+        "--output", "./output",
+        "--max-products", "10",
+        "--verbose"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
       "name": "Upload — Dry Run",
       "type": "node",
       "request": "launch",

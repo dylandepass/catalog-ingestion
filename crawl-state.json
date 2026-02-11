@@ -1,765 +1,958 @@
 {
   "version": 1,
-  "startedAt": "2026-02-11T01:53:18.444Z",
-  "lastUpdatedAt": "2026-02-11T01:58:19.979Z",
+  "startedAt": "2026-02-11T02:45:00.376Z",
+  "lastUpdatedAt": "2026-02-11T02:45:08.646Z",
   "config": {
-    "url": "https://www.adobestore.com/all",
-    "mode": "category",
-    "platform": "generic",
-    "concurrency": 2,
-    "delay": 2000
+    "url": "https://edge-graph.adobe.io/api/b8226c70-6dad-4c85-a17b-9b0a3fc3abe2/graphql",
+    "mode": "catalog-service",
+    "platform": "adobe-commerce"
   },
   "stats": {
-    "discovered": 149,
-    "crawled": 149,
+    "discovered": 188,
+    "crawled": 188,
     "failed": 0,
     "skipped": 0
   },
   "urls": {
-    "https://www.adobestore.com/products/gift-card/gift-card": {
+    "ADB119": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:23.660Z"
+      "crawledAt": "2026-02-11T02:45:02.253Z"
     },
-    "https://www.adobestore.com/products/p-adb450/adb450": {
+    "ADB123": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:25.732Z"
+      "crawledAt": "2026-02-11T02:45:02.345Z"
     },
-    "https://www.adobestore.com/products/p-adb449/adb449": {
+    "ADB124": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:27.770Z"
+      "crawledAt": "2026-02-11T02:45:02.346Z"
     },
-    "https://www.adobestore.com/products/p-adb448/adb448": {
+    "ADB125": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:29.939Z"
+      "crawledAt": "2026-02-11T02:45:02.438Z"
     },
-    "https://www.adobestore.com/products/p-adb457/adb457": {
+    "ADB135": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:31.777Z"
+      "crawledAt": "2026-02-11T02:45:02.444Z"
     },
-    "https://www.adobestore.com/products/p-adb453/adb453": {
+    "ADB157": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:33.645Z"
+      "crawledAt": "2026-02-11T02:45:02.536Z"
     },
-    "https://www.adobestore.com/products/bezier-tumblerp-adb451/adb451": {
+    "ADB160": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:35.915Z"
+      "crawledAt": "2026-02-11T02:45:02.538Z"
     },
-    "https://www.adobestore.com/products/p-adb447/adb447": {
+    "ADB166": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:37.571Z"
+      "crawledAt": "2026-02-11T02:45:02.545Z"
     },
-    "https://www.adobestore.com/products/p-adb445/adb445": {
+    "ADB167": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:39.979Z"
+      "crawledAt": "2026-02-11T02:45:02.560Z"
     },
-    "https://www.adobestore.com/products/p-adb444/adb444": {
+    "ADB168": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:41.757Z"
+      "crawledAt": "2026-02-11T02:45:02.564Z"
     },
-    "https://www.adobestore.com/products/acrylic-keychains-set-of-2/adb460": {
+    "ADB169": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:43.649Z"
+      "crawledAt": "2026-02-11T02:45:02.678Z"
     },
-    "https://www.adobestore.com/products/adobe-pattern-hoodiep-adb443/adb443": {
+    "ADB170": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:45.756Z"
+      "crawledAt": "2026-02-11T02:45:02.827Z"
     },
-    "https://www.adobestore.com/products/p-adb439/adb439": {
+    "ADB171": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:47.495Z"
+      "crawledAt": "2026-02-11T02:45:02.930Z"
     },
-    "https://www.adobestore.com/products/p-adb388/adb388": {
+    "ADB177": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:49.917Z"
+      "crawledAt": "2026-02-11T02:45:03.027Z"
     },
-    "https://www.adobestore.com/products/p-adb387/adb387": {
+    "ADB178": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:51.970Z"
+      "crawledAt": "2026-02-11T02:45:03.125Z"
     },
-    "https://www.adobestore.com/products/p-adb386/adb386": {
+    "ADB180": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:53.499Z"
+      "crawledAt": "2026-02-11T02:45:03.130Z"
     },
-    "https://www.adobestore.com/products/p-adb385/adb385": {
+    "ADB181": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:55.946Z"
+      "crawledAt": "2026-02-11T02:45:03.132Z"
     },
-    "https://www.adobestore.com/products/p-adb378/adb378": {
+    "ADB185": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:57.892Z"
+      "crawledAt": "2026-02-11T02:45:03.223Z"
     },
-    "https://www.adobestore.com/products/p-adb377/adb377": {
+    "ADB188": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:53:59.872Z"
+      "crawledAt": "2026-02-11T02:45:03.318Z"
     },
-    "https://www.adobestore.com/products/p-adb376/adb376": {
+    "ADB192": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:01.960Z"
+      "crawledAt": "2026-02-11T02:45:03.326Z"
     },
-    "https://www.adobestore.com/products/p-adb374/adb374": {
+    "ADB194": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:03.947Z"
+      "crawledAt": "2026-02-11T02:45:03.329Z"
     },
-    "https://www.adobestore.com/products/p-adb366/adb366": {
+    "ADB195": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:05.755Z"
+      "crawledAt": "2026-02-11T02:45:03.331Z"
     },
-    "https://www.adobestore.com/products/p-adb364/adb364": {
+    "ADB208": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:07.685Z"
+      "crawledAt": "2026-02-11T02:45:03.332Z"
     },
-    "https://www.adobestore.com/products/p-adb330/adb330": {
+    "ADB213": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:09.933Z"
+      "crawledAt": "2026-02-11T02:45:03.359Z"
     },
-    "https://www.adobestore.com/products/p-adb328/adb328": {
+    "ADB215": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:12.168Z"
+      "crawledAt": "2026-02-11T02:45:03.443Z"
     },
-    "https://www.adobestore.com/products/p-adb314/adb314": {
+    "ADB216": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:13.827Z"
+      "crawledAt": "2026-02-11T02:45:03.443Z"
     },
-    "https://www.adobestore.com/products/p-adb313/adb313": {
+    "ADB217": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:15.878Z"
+      "crawledAt": "2026-02-11T02:45:03.444Z"
     },
-    "https://www.adobestore.com/products/adobe-for-all-teep-adb256/adb256": {
+    "ADB218": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:17.536Z"
+      "crawledAt": "2026-02-11T02:45:03.445Z"
     },
-    "https://www.adobestore.com/products/stone-penp-adb236/adb236": {
+    "ADB219": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:20.163Z"
+      "crawledAt": "2026-02-11T02:45:03.446Z"
     },
-    "https://www.adobestore.com/products/adobe-life-teep-adb215/adb215": {
+    "ADB221": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:21.916Z"
+      "crawledAt": "2026-02-11T02:45:03.447Z"
     },
-    "https://www.adobestore.com/products/cutter-and-buck-1-4-zip-sweaterp-adb185/adb185": {
+    "ADB223": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:23.691Z"
+      "crawledAt": "2026-02-11T02:45:03.569Z"
     },
-    "https://www.adobestore.com/products/bezier-full-zip-hoodiep-adb178/adb178": {
+    "ADB224": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:25.935Z"
+      "crawledAt": "2026-02-11T02:45:03.570Z"
     },
-    "https://www.adobestore.com/products/bezier-teep-adb177/adb177": {
+    "ADB236": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:27.650Z"
+      "crawledAt": "2026-02-11T02:45:03.651Z"
     },
-    "https://www.adobestore.com/products/travismathew-polop-adb157/adb157": {
+    "ADB256": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:29.943Z"
+      "crawledAt": "2026-02-11T02:45:03.742Z"
     },
-    "https://www.adobestore.com/products/aluminum-pen-stylusp-adb125/adb125": {
+    "ADB257": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:31.593Z"
+      "crawledAt": "2026-02-11T02:45:03.743Z"
     },
-    "https://www.adobestore.com/products/appeel-journal-mid-sizep-adb123/adb123": {
+    "ADB269": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:33.924Z"
+      "crawledAt": "2026-02-11T02:45:03.843Z"
     },
-    "https://www.adobestore.com/products/p-adb446/adb446": {
+    "ADB270": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:35.657Z"
+      "crawledAt": "2026-02-11T02:45:03.844Z"
     },
-    "https://www.adobestore.com/products/p-adb442/adb442": {
+    "ADB271": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:37.983Z"
+      "crawledAt": "2026-02-11T02:45:03.845Z"
     },
-    "https://www.adobestore.com/products/p-adb440/adb440": {
+    "ADB272": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:39.813Z"
+      "crawledAt": "2026-02-11T02:45:03.846Z"
     },
-    "https://www.adobestore.com/products/p-adb435-ml/adb532": {
+    "ADB273": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:41.521Z"
+      "crawledAt": "2026-02-11T02:45:03.862Z"
     },
-    "https://www.adobestore.com/products/p-adb433/adb433": {
+    "ADB274": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:43.612Z"
+      "crawledAt": "2026-02-11T02:45:03.887Z"
     },
-    "https://www.adobestore.com/products/p-adb431/adb431": {
+    "ADB275": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:45.705Z"
+      "crawledAt": "2026-02-11T02:45:03.889Z"
     },
-    "https://www.adobestore.com/products/p-adb426/adb426": {
+    "ADB276": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:47.604Z"
+      "crawledAt": "2026-02-11T02:45:03.978Z"
     },
-    "https://www.adobestore.com/products/p-adb412/adb412": {
+    "ADB277": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:49.610Z"
+      "crawledAt": "2026-02-11T02:45:04.080Z"
     },
-    "https://www.adobestore.com/products/p-adb407/adb407": {
+    "ADB285": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:51.570Z"
+      "crawledAt": "2026-02-11T02:45:04.164Z"
     },
-    "https://www.adobestore.com/products/p-adb406/adb406": {
+    "ADB287": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:53.660Z"
+      "crawledAt": "2026-02-11T02:45:04.245Z"
     },
-    "https://www.adobestore.com/products/p-adb405/adb405": {
+    "ADB295": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:55.992Z"
+      "crawledAt": "2026-02-11T02:45:04.346Z"
     },
-    "https://www.adobestore.com/products/p-adb404/adb404": {
+    "ADB296": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:57.628Z"
+      "crawledAt": "2026-02-11T02:45:04.465Z"
     },
-    "https://www.adobestore.com/products/p-adb398/adb398": {
+    "ADB299": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:54:59.806Z"
+      "crawledAt": "2026-02-11T02:45:04.469Z"
     },
-    "https://www.adobestore.com/products/p-adb396/adb396": {
+    "ADB300": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:02.295Z"
+      "crawledAt": "2026-02-11T02:45:04.470Z"
     },
-    "https://www.adobestore.com/products/p-adb392/adb392": {
+    "ADB301": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:03.696Z"
+      "crawledAt": "2026-02-11T02:45:04.500Z"
     },
-    "https://www.adobestore.com/products/p-adb368/adb368": {
+    "ADB302": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:06.011Z"
+      "crawledAt": "2026-02-11T02:45:04.502Z"
     },
-    "https://www.adobestore.com/products/p-adb365/adb365": {
+    "ADB304": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:07.635Z"
+      "crawledAt": "2026-02-11T02:45:04.503Z"
     },
-    "https://www.adobestore.com/products/p-adb356/adb356": {
+    "ADB312": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:09.855Z"
+      "crawledAt": "2026-02-11T02:45:04.509Z"
     },
-    "https://www.adobestore.com/products/p-adb352/adb352": {
+    "ADB313": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:11.879Z"
+      "crawledAt": "2026-02-11T02:45:04.595Z"
     },
-    "https://www.adobestore.com/products/p-adb343/adb343": {
+    "ADB314": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:13.553Z"
+      "crawledAt": "2026-02-11T02:45:04.681Z"
     },
-    "https://www.adobestore.com/products/p-adb342/adb342": {
+    "ADB318": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:15.714Z"
+      "crawledAt": "2026-02-11T02:45:04.682Z"
     },
-    "https://www.adobestore.com/products/p-adb341/adb341": {
+    "ADB319": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:17.844Z"
+      "crawledAt": "2026-02-11T02:45:04.683Z"
     },
-    "https://www.adobestore.com/products/pattern-umbrella-with-sleeve/adb502": {
+    "ADB320": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:19.761Z"
+      "crawledAt": "2026-02-11T02:45:04.685Z"
     },
-    "https://www.adobestore.com/products/p-adb340/adb340": {
+    "ADB322": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:21.635Z"
+      "crawledAt": "2026-02-11T02:45:04.687Z"
     },
-    "https://www.adobestore.com/products/p-adb339/adb339": {
+    "ADB323": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:23.968Z"
+      "crawledAt": "2026-02-11T02:45:04.737Z"
     },
-    "https://www.adobestore.com/products/p-adb338/adb338": {
+    "ADB324": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:25.855Z"
+      "crawledAt": "2026-02-11T02:45:04.740Z"
     },
-    "https://www.adobestore.com/products/p-adb336/adb336": {
+    "ADB326": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:28.031Z"
+      "crawledAt": "2026-02-11T02:45:04.744Z"
     },
-    "https://www.adobestore.com/products/p-adb335/adb335": {
+    "ADB327": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:29.824Z"
+      "crawledAt": "2026-02-11T02:45:04.746Z"
     },
-    "https://www.adobestore.com/products/p-adb333/adb333": {
+    "ADB328": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:31.965Z"
+      "crawledAt": "2026-02-11T02:45:04.842Z"
     },
-    "https://www.adobestore.com/products/p-adb332/adb332": {
+    "ADB329": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:33.824Z"
+      "crawledAt": "2026-02-11T02:45:04.843Z"
     },
-    "https://www.adobestore.com/products/p-adb329/adb329": {
+    "ADB330": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:35.714Z"
+      "crawledAt": "2026-02-11T02:45:04.931Z"
     },
-    "https://www.adobestore.com/products/p-adb327/adb327": {
+    "ADB332": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:38.034Z"
+      "crawledAt": "2026-02-11T02:45:04.933Z"
     },
-    "https://www.adobestore.com/products/p-adb326/adb326": {
+    "ADB333": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:39.727Z"
+      "crawledAt": "2026-02-11T02:45:04.934Z"
     },
-    "https://www.adobestore.com/products/p-adb324/adb324": {
+    "ADB335": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:41.569Z"
+      "crawledAt": "2026-02-11T02:45:04.936Z"
     },
-    "https://www.adobestore.com/products/p-adb323/adb323": {
+    "ADB336": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:43.599Z"
+      "crawledAt": "2026-02-11T02:45:04.964Z"
     },
-    "https://www.adobestore.com/products/p-adb322/adb322": {
+    "ADB338": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:45.931Z"
+      "crawledAt": "2026-02-11T02:45:04.965Z"
     },
-    "https://www.adobestore.com/products/p-adb320/adb320": {
+    "ADB339": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:47.871Z"
+      "crawledAt": "2026-02-11T02:45:04.967Z"
     },
-    "https://www.adobestore.com/products/p-adb319/adb319": {
+    "ADB340": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:49.693Z"
+      "crawledAt": "2026-02-11T02:45:04.969Z"
     },
-    "https://www.adobestore.com/products/p-adb318/adb318": {
+    "ADB341": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:51.922Z"
+      "crawledAt": "2026-02-11T02:45:04.973Z"
     },
-    "https://www.adobestore.com/products/p-adb312/adb312": {
+    "ADB342": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:54.028Z"
+      "crawledAt": "2026-02-11T02:45:04.975Z"
     },
-    "https://www.adobestore.com/products/p-adb304/adb304": {
+    "ADB343": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:55.572Z"
+      "crawledAt": "2026-02-11T02:45:04.976Z"
     },
-    "https://www.adobestore.com/products/p-adb302/adb302": {
+    "ADB344": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:57.793Z"
+      "crawledAt": "2026-02-11T02:45:04.977Z"
     },
-    "https://www.adobestore.com/products/jbl-earbudsp-adb301/adb301": {
+    "ADB345": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:55:59.876Z"
+      "crawledAt": "2026-02-11T02:45:04.979Z"
     },
-    "https://www.adobestore.com/products/p-adb300/adb300": {
+    "ADB346": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:01.718Z"
+      "crawledAt": "2026-02-11T02:45:04.981Z"
     },
-    "https://www.adobestore.com/products/coloring-kitp-adb299/adb299": {
+    "ADB347": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:04.039Z"
+      "crawledAt": "2026-02-11T02:45:04.989Z"
     },
-    "https://www.adobestore.com/products/p-adb257/adb257": {
+    "ADB348": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:05.701Z"
+      "crawledAt": "2026-02-11T02:45:04.991Z"
     },
-    "https://www.adobestore.com/products/bezier-glass-silicone-bottlep-adb224/adb224": {
+    "ADB349": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:08.061Z"
+      "crawledAt": "2026-02-11T02:45:04.992Z"
     },
-    "https://www.adobestore.com/products/3-in-1-usb-cordp-adb221/adb221": {
+    "ADB350": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:09.873Z"
+      "crawledAt": "2026-02-11T02:45:04.993Z"
     },
-    "https://www.adobestore.com/products/pattern-totep-adb219/adb219": {
+    "ADB351": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:11.575Z"
+      "crawledAt": "2026-02-11T02:45:04.995Z"
     },
-    "https://www.adobestore.com/products/adobe-life-journalp-adb218/adb218": {
+    "ADB352": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:13.687Z"
+      "crawledAt": "2026-02-11T02:45:05.002Z"
     },
-    "https://www.adobestore.com/products/adobe-life-camera-on-door-hangerp-adb217/adb217": {
+    "ADB356": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:15.964Z"
+      "crawledAt": "2026-02-11T02:45:05.004Z"
     },
-    "https://www.adobestore.com/products/adobe-life-sticker-setp-adb216/adb216": {
+    "ADB364": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:18.020Z"
+      "crawledAt": "2026-02-11T02:45:05.097Z"
     },
-    "https://www.adobestore.com/products/pattern-blanketp-adb208/adb208": {
+    "ADB365": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:19.667Z"
+      "crawledAt": "2026-02-11T02:45:05.098Z"
     },
-    "https://www.adobestore.com/products/adobe-notecard-set-10p-adb194/adb194": {
+    "ADB366": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:21.650Z"
+      "crawledAt": "2026-02-11T02:45:05.197Z"
     },
-    "https://www.adobestore.com/products/adobe-sticker-setp-adb192/adb192": {
+    "ADB368": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:23.959Z"
+      "crawledAt": "2026-02-11T02:45:05.205Z"
     },
-    "https://www.adobestore.com/products/sony-speaker/adb463": {
+    "ADB374": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:25.723Z"
+      "crawledAt": "2026-02-11T02:45:05.293Z"
     },
-    "https://www.adobestore.com/products/carafe-glass-set-by-refresh-glassp-adb181/adb181": {
+    "ADB376": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:27.823Z"
+      "crawledAt": "2026-02-11T02:45:05.381Z"
     },
-    "https://www.adobestore.com/products/set-of-4-glasses-by-refresh-glassp-adb180/adb180": {
+    "ADB377": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:29.945Z"
+      "crawledAt": "2026-02-11T02:45:05.479Z"
     },
-    "https://www.adobestore.com/products/adobe-lapel-pin-1-2p-adb168/adb168": {
+    "ADB378": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:31.939Z"
+      "crawledAt": "2026-02-11T02:45:05.562Z"
     },
-    "https://www.adobestore.com/products/adobe-pin-1p-adb167/adb167": {
+    "ADB379": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:33.995Z"
+      "crawledAt": "2026-02-11T02:45:05.646Z"
     },
-    "https://www.adobestore.com/products/timbuk2-stealth-folio-organizerp-adb166/adb166": {
+    "ADB385": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:35.712Z"
+      "crawledAt": "2026-02-11T02:45:05.781Z"
     },
-    "https://www.adobestore.com/products/timbuk2-eco-parkside-backpackp-adb160/adb160": {
+    "ADB386": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:37.738Z"
+      "crawledAt": "2026-02-11T02:45:05.877Z"
     },
-    "https://www.adobestore.com/products/bamboo-lap-deskp-adb135/adb135": {
+    "ADB387": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:39.788Z"
+      "crawledAt": "2026-02-11T02:45:05.966Z"
     },
-    "https://www.adobestore.com/products/appeel-journal-mini-picop-adb124/adb124": {
+    "ADB388": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:42.012Z"
+      "crawledAt": "2026-02-11T02:45:06.060Z"
     },
-    "https://www.adobestore.com/products/denim-apronp-adb119/adb119": {
+    "ADB392": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:43.979Z"
+      "crawledAt": "2026-02-11T02:45:06.079Z"
     },
-    "https://www.adobestore.com/products/button-up-shirt-art-by-carly-berry/adb454": {
+    "ADB396": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:45.815Z"
+      "crawledAt": "2026-02-11T02:45:06.081Z"
     },
-    "https://www.adobestore.com/products/bezier-full-zip-hoodie-silver/adb455": {
+    "ADB398": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:47.962Z"
+      "crawledAt": "2026-02-11T02:45:06.082Z"
     },
-    "https://www.adobestore.com/products/luggage-tag/adb456": {
+    "ADB404": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:49.685Z"
+      "crawledAt": "2026-02-11T02:45:06.086Z"
     },
-    "https://www.adobestore.com/products/fleece-hat/adb458": {
+    "ADB405": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:51.694Z"
+      "crawledAt": "2026-02-11T02:45:06.107Z"
     },
-    "https://www.adobestore.com/products/bezier-mega-tumbler/adb459": {
+    "ADB406": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:53.886Z"
+      "crawledAt": "2026-02-11T02:45:06.108Z"
     },
-    "https://www.adobestore.com/products/flight-keytag/adb461": {
+    "ADB407": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:55.765Z"
+      "crawledAt": "2026-02-11T02:45:06.109Z"
     },
-    "https://www.adobestore.com/products/adobe-max-25-hat/adb462": {
+    "ADB412": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:57.577Z"
+      "crawledAt": "2026-02-11T02:45:06.111Z"
     },
-    "https://www.adobestore.com/products/bezier-stainless-bottle/adb464": {
+    "ADB426": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:56:59.619Z"
+      "crawledAt": "2026-02-11T02:45:06.112Z"
     },
-    "https://www.adobestore.com/products/bezier-short-tumbler/adb465": {
+    "ADB431": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:01.826Z"
+      "crawledAt": "2026-02-11T02:45:06.114Z"
     },
-    "https://www.adobestore.com/products/adobe-photoshop-tee/adb466": {
+    "ADB432": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:03.853Z"
+      "crawledAt": "2026-02-11T02:45:06.121Z"
     },
-    "https://www.adobestore.com/products/adobe-premiere-pro-tee/adb467": {
+    "ADB433": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:05.693Z"
+      "crawledAt": "2026-02-11T02:45:06.127Z"
     },
-    "https://www.adobestore.com/products/classic-click-pens-set-of-3/adb468": {
+    "ADB439": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:07.923Z"
+      "crawledAt": "2026-02-11T02:45:06.228Z"
     },
-    "https://www.adobestore.com/products/gradient-socks/adb469": {
+    "ADB440": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:09.659Z"
+      "crawledAt": "2026-02-11T02:45:06.230Z"
     },
-    "https://www.adobestore.com/products/cordoroy-hat/adb471": {
+    "ADB442": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:11.837Z"
+      "crawledAt": "2026-02-11T02:45:06.234Z"
     },
-    "https://www.adobestore.com/products/creative-sticker-set/adb472": {
+    "ADB443": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:13.737Z"
+      "crawledAt": "2026-02-11T02:45:06.314Z"
     },
-    "https://www.adobestore.com/products/pattern-hat/adb473": {
+    "ADB444": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:16.319Z"
+      "crawledAt": "2026-02-11T02:45:06.410Z"
     },
-    "https://www.adobestore.com/products/pattern-bottle/adb474": {
+    "ADB445": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:17.645Z"
+      "crawledAt": "2026-02-11T02:45:06.497Z"
     },
-    "https://www.adobestore.com/products/adb476/adb476": {
+    "ADB446": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:19.890Z"
+      "crawledAt": "2026-02-11T02:45:06.499Z"
     },
-    "https://www.adobestore.com/products/bottle-buddy-pouch/adb477": {
+    "ADB447": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:21.892Z"
+      "crawledAt": "2026-02-11T02:45:06.588Z"
     },
-    "https://www.adobestore.com/products/classic-click-pen/adb478": {
+    "ADB448": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:24.290Z"
+      "crawledAt": "2026-02-11T02:45:06.689Z"
     },
-    "https://www.adobestore.com/products/nomadix-original-towel-art-by-hattie-stewart/adb479": {
+    "ADB449": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:26.092Z"
+      "crawledAt": "2026-02-11T02:45:06.773Z"
     },
-    "https://www.adobestore.com/products/photoshop-mug/adb480": {
+    "ADB450": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:27.893Z"
+      "crawledAt": "2026-02-11T02:45:06.871Z"
     },
-    "https://www.adobestore.com/products/premiere-pro-mug/adb481": {
+    "ADB451": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:29.609Z"
+      "crawledAt": "2026-02-11T02:45:06.874Z"
     },
-    "https://www.adobestore.com/products/illustrator-mug/adb482": {
+    "ADB453": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:31.894Z"
+      "crawledAt": "2026-02-11T02:45:06.876Z"
     },
-    "https://www.adobestore.com/products/adobe-illustrator-tee/adb483": {
+    "ADB454": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:34.098Z"
+      "crawledAt": "2026-02-11T02:45:06.954Z"
     },
-    "https://www.adobestore.com/products/adobe-icon-patch/adb484": {
+    "ADB455": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:35.985Z"
+      "crawledAt": "2026-02-11T02:45:07.045Z"
     },
-    "https://www.adobestore.com/products/pattern-corner-coil-journal/adb485": {
+    "ADB456": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:38.008Z"
+      "crawledAt": "2026-02-11T02:45:07.046Z"
     },
-    "https://www.adobestore.com/products/photoshop-pillow/adb486": {
+    "ADB457": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:39.927Z"
+      "crawledAt": "2026-02-11T02:45:07.047Z"
     },
-    "https://www.adobestore.com/products/premiere-pillow/adb488": {
+    "ADB458": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:41.802Z"
+      "crawledAt": "2026-02-11T02:45:07.066Z"
     },
-    "https://www.adobestore.com/products/reversible-bucket-hat/adb490": {
+    "ADB459": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:43.671Z"
+      "crawledAt": "2026-02-11T02:45:07.071Z"
     },
-    "https://www.adobestore.com/products/photoshop-vest/adb491": {
+    "ADB460": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:45.638Z"
+      "crawledAt": "2026-02-11T02:45:07.081Z"
     },
-    "https://www.adobestore.com/products/pickleball-set/adb492": {
+    "ADB461": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:47.707Z"
+      "crawledAt": "2026-02-11T02:45:07.097Z"
     },
-    "https://www.adobestore.com/products/embroidered-crew-socks/adb493": {
+    "ADB462": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:50.190Z"
+      "crawledAt": "2026-02-11T02:45:07.100Z"
     },
-    "https://www.adobestore.com/products/pattern-socks/adb494": {
+    "ADB463": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:52.123Z"
+      "crawledAt": "2026-02-11T02:45:07.103Z"
     },
-    "https://www.adobestore.com/products/transparency-grid-socks/adb495": {
+    "ADB464": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:53.655Z"
+      "crawledAt": "2026-02-11T02:45:07.113Z"
     },
-    "https://www.adobestore.com/products/instax-camera/adb498": {
+    "ADB465": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:56.091Z"
+      "crawledAt": "2026-02-11T02:45:07.121Z"
     },
-    "https://www.adobestore.com/products/creative-pin-set/adb500": {
+    "ADB466": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:57.762Z"
+      "crawledAt": "2026-02-11T02:45:07.220Z"
     },
-    "https://www.adobestore.com/products/adobe-max-25-tee/adb501": {
+    "ADB467": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:57:59.826Z"
+      "crawledAt": "2026-02-11T02:45:07.314Z"
     },
-    "https://www.adobestore.com/products/sticker-set-art-by-jen-kuroki/adb505": {
+    "ADB468": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:01.968Z"
+      "crawledAt": "2026-02-11T02:45:07.316Z"
     },
-    "https://www.adobestore.com/products/flight-keytag-art-by-jen-kuroki/adb506": {
+    "ADB469": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:04.013Z"
+      "crawledAt": "2026-02-11T02:45:07.324Z"
     },
-    "https://www.adobestore.com/products/illustration-tee-art-by-hattie-stewart/adb507": {
+    "ADB471": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:06.111Z"
+      "crawledAt": "2026-02-11T02:45:07.349Z"
     },
-    "https://www.adobestore.com/products/pop-out-magnet-set/adb508": {
+    "ADB472": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:07.882Z"
+      "crawledAt": "2026-02-11T02:45:07.353Z"
     },
-    "https://www.adobestore.com/products/poppy-tee-art-by-jen-kuroki/adb510": {
+    "ADB473": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:10.051Z"
+      "crawledAt": "2026-02-11T02:45:07.355Z"
     },
-    "https://www.adobestore.com/products/windbreaker/adb511": {
+    "ADB474": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:11.856Z"
+      "crawledAt": "2026-02-11T02:45:07.357Z"
     },
-    "https://www.adobestore.com/products/wood-magnet-set/adb513": {
+    "ADB476": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:13.922Z"
+      "crawledAt": "2026-02-11T02:45:07.454Z"
     },
-    "https://www.adobestore.com/products/transparency-grid-zip-up-vest/adb515": {
+    "ADB477": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:15.735Z"
+      "crawledAt": "2026-02-11T02:45:07.470Z"
     },
-    "https://www.adobestore.com/products/cozy-colors-notecard-set-10/adb520": {
+    "ADB478": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:17.628Z"
+      "crawledAt": "2026-02-11T02:45:07.480Z"
     },
-    "https://www.adobestore.com/products/pattern-notecard-set-10/adb521": {
+    "ADB479": {
       "status": "crawled",
       "error": null,
-      "crawledAt": "2026-02-11T01:58:19.978Z"
+      "crawledAt": "2026-02-11T02:45:07.483Z"
+    },
+    "ADB480": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.484Z"
+    },
+    "ADB481": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.494Z"
+    },
+    "ADB482": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.500Z"
+    },
+    "ADB483": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.597Z"
+    },
+    "ADB484": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.598Z"
+    },
+    "ADB485": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.602Z"
+    },
+    "ADB486": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.626Z"
+    },
+    "ADB488": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.638Z"
+    },
+    "ADB490": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.647Z"
+    },
+    "ADB491": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.731Z"
+    },
+    "ADB492": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.738Z"
+    },
+    "ADB493": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.747Z"
+    },
+    "ADB494": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.772Z"
+    },
+    "ADB495": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.774Z"
+    },
+    "ADB496": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.775Z"
+    },
+    "ADB497": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.777Z"
+    },
+    "ADB498": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.793Z"
+    },
+    "ADB499": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.797Z"
+    },
+    "ADB500": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.821Z"
+    },
+    "ADB501": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.925Z"
+    },
+    "ADB502": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.947Z"
+    },
+    "ADB505": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.953Z"
+    },
+    "ADB506": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:07.954Z"
+    },
+    "ADB507": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.063Z"
+    },
+    "ADB508": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.084Z"
+    },
+    "ADB510": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.179Z"
+    },
+    "ADB511": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.288Z"
+    },
+    "ADB513": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.291Z"
+    },
+    "ADB515": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.398Z"
+    },
+    "ADB516": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.493Z"
+    },
+    "ADB517": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.581Z"
+    },
+    "ADB518": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.587Z"
+    },
+    "ADB519": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.588Z"
+    },
+    "ADB520": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.598Z"
+    },
+    "ADB521": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.599Z"
+    },
+    "ADB522": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.622Z"
+    },
+    "ADB523": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.625Z"
+    },
+    "ADB532": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.626Z"
+    },
+    "gift-card": {
+      "status": "crawled",
+      "error": null,
+      "crawledAt": "2026-02-11T02:45:08.646Z"
     }
   }
 }

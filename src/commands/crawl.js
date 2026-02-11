@@ -11,11 +11,12 @@ import { extractProduct } from '../extractor/index.js';
 import { transformProduct } from '../transformer/index.js';
 import { createLogger } from '../utils/logger.js';
 import { createSpinner, createTable } from '../utils/progress.js';
+import { runCatalogServiceCrawl } from './catalog-service.js';
 
 const crawlCommand = new Command('crawl')
   .description('Crawl a commerce website and extract product data')
-  .requiredOption('-u, --url <url>', 'Starting URL (homepage, sitemap, or category)')
-  .option('-m, --mode <mode>', 'Discovery mode: sitemap, category, urls', 'sitemap')
+  .option('-u, --url <url>', 'Starting URL (homepage, sitemap, or category)')
+  .option('-m, --mode <mode>', 'Discovery mode: sitemap, category, urls, catalog-service', 'sitemap')
   .option('--urls-file <path>', 'File with URLs (one per line, for --mode urls)')
   .option('-o, --output <dir>', 'Output directory for JSON files', './output')
   .option('-c, --concurrency <n>', 'Max concurrent pages', '3')
@@ -29,8 +30,28 @@ const crawlCommand = new Command('crawl')
   .option('--path-prefix <prefix>', 'Path prefix for Product Bus paths')
   .option('--default-currency <code>', 'Default currency code', 'USD')
   .option('-v, --verbose', 'Verbose output', false)
+  // Catalog Service options
+  .option('--cs-endpoint <url>', 'Catalog Service GraphQL endpoint URL')
+  .option('--cs-environment-id <id>', 'magento-environment-id header')
+  .option('--cs-store-code <code>', 'magento-store-code header', 'main_website_store')
+  .option('--cs-store-view-code <code>', 'magento-store-view-code header', 'default')
+  .option('--cs-website-code <code>', 'magento-website-code header', 'base')
+  .option('--cs-customer-group <hash>', 'magento-customer-group header')
+  .option('--cs-api-key <key>', 'x-api-key header', 'not_used')
   .action(async (options) => {
     const logger = createLogger({ verbose: options.verbose });
+
+    // Catalog Service mode — entirely different flow
+    if (options.mode === 'catalog-service') {
+      return runCatalogServiceCrawl(options, logger);
+    }
+
+    // Browser-based modes require a URL
+    if (!options.url) {
+      logger.error('--url is required for sitemap, category, and urls modes');
+      process.exit(1);
+    }
+
     const concurrency = parseInt(options.concurrency, 10) || 3;
     const delay = parseInt(options.delay, 10) || 1500;
     const maxProducts = options.maxProducts ? parseInt(options.maxProducts, 10) : undefined;
